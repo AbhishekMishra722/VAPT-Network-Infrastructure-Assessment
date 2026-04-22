@@ -1,0 +1,114 @@
+# 🔐 VAPT – Network Infrastructure Assessment
+
+## 📌 Scope
+Performed Vulnerability Assessment on internal systems to identify security weaknesses and misconfigurations.
+
+### 🎯 Targets
+- Windows Machine – 172.31.32.114
+- Debian Linux Machine – 172.31.42.236
+
+---
+
+## 🛠️ Tools Used
+- Nmap (Zenmap)
+- Nessus Vulnerability Scanner
+
+---
+
+## 🔎 Methodology
+1. Reconnaissance & Scanning  
+2. Enumeration  
+3. Vulnerability Assessment  
+4. Risk Analysis  
+5. Reporting  
+
+---
+
+## 🌐 Network Scanning Results
+
+### 🔹 Windows System
+**Open Ports:**
+- 135 (MSRPC)
+- 139 (NetBIOS)
+- 445 (SMB)
+- 3389 (RDP)
+
+### 🔹 Debian System
+**Open Ports:**
+- 21 (FTP)
+- 22 (SSH)
+- 80 (HTTP)
+
+---
+
+## 🚨 Key Vulnerabilities Identified
+
+### 🔴 1. SMB Exposure (Windows)
+- **Risk:** Remote exploitation (EternalBlue possibility)
+- **Impact:** Unauthorized access / ransomware
+- **Severity:** High
+
+---
+
+### 🔴 2. RDP Exposure (Windows)
+- **Risk:** Brute-force attacks
+- **Impact:** Account compromise
+- **Severity:** High
+
+---
+
+### 🟠 3. FTP Service Exposure (Debian)
+- **Risk:** Anonymous access / weak credentials
+- **Impact:** Data leakage
+- **Severity:** Medium
+
+---
+
+### 🟠 4. Outdated Apache Server
+- **Risk:** Known CVEs
+- **Impact:** Web exploitation
+- **Severity:** Medium
+
+---
+
+## 📊 Vulnerability Summary
+
+| System  | Risk Level | Key Issues        |
+|--------|----------|------------------|
+| Windows | High     | SMB, RDP, Patching |
+| Debian  | Medium   | FTP, Apache       |
+
+---
+
+## ⚠️ Risk Analysis
+
+### Windows Risks:
+- SMB exploitation (e.g., EternalBlue)
+- RDP brute-force attacks
+- Privilege escalation
+
+### Debian Risks:
+- FTP unauthorized access
+- SSH brute-force
+- Web server vulnerabilities
+
+---
+
+## 🛡️ Recommendations
+- Disable unused services (SMB, FTP if not needed)
+- Implement strong password policies & account lockout
+- Patch systems regularly
+- Restrict RDP access (VPN + MFA)
+- Harden SSH (disable root login)
+
+---
+
+## 📌 Conclusion
+The assessment identified multiple vulnerabilities, with the Windows system posing a higher risk due to exposed SMB and RDP services. Immediate remediation is required to reduce the attack surface and prevent potential exploitation.
+
+---
+
+## 🧠 Key Learnings
+- Hands-on experience with network scanning and vulnerability assessment
+- Understanding of real-world attack surfaces
+- Risk-based prioritization of vulnerabilities
